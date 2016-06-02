@@ -28,7 +28,6 @@
 		8EE16F941D007E9500B27496 /* UIColor+Darker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Darker.swift"; sourceTree = "<group>"; };
 		8EF9BBD11CFC91F90020BA1A /* KMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF9BBD41CFC91F90020BA1A /* KMSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMSegmentedControl.h; sourceTree = "<group>"; };
-		8EF9BBD61CFC91F90020BA1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EF9BBDB1CFC91F90020BA1A /* KMSegmentedControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMSegmentedControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				8EF9BBD41CFC91F90020BA1A /* KMSegmentedControl.h */,
-				8EF9BBD61CFC91F90020BA1A /* Info.plist */,
 				8E5628CA1CFDBC8D00580BC5 /* KMSegmentedControl.swift */,
 				8EE16F941D007E9500B27496 /* UIColor+Darker.swift */,
 			);
