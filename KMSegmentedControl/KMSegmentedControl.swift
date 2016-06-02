@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol KMSegmentedControlDelegate {
+public protocol KMSegmentedControlDelegate {
   func KMSegmentedControl(selected item: UIButton)
 }
 
-@IBDesignable class KMSegmentedControl: UIView {
+@IBDesignable public class KMSegmentedControl: UIView {
 
   enum SelectorOption {
     case None
@@ -113,17 +113,17 @@ protocol KMSegmentedControlDelegate {
     setupKMSegmentedControl()
   }
 
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setupKMSegmentedControl()
   }
     // MARK : Setup
-  override func prepareForInterfaceBuilder() {
+  override public func prepareForInterfaceBuilder() {
     items = ["First", "Second", "Third"]
     layoutIfNeeded()
   }
 
-  override func layoutSubviews() {
+  override public func layoutSubviews() {
     super.layoutSubviews()
     var selectFrame = selectedItem!.frame
     let newWidth = CGRectGetWidth(selectFrame) + 0.5
