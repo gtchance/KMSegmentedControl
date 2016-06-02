@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E5628CB1CFDBC8D00580BC5 /* KMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5628CA1CFDBC8D00580BC5 /* KMSegmentedControl.swift */; };
+		8EE16F951D007E9500B27496 /* UIColor+Darker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE16F941D007E9500B27496 /* UIColor+Darker.swift */; };
 		8EF9BBD51CFC91F90020BA1A /* KMSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EF9BBD41CFC91F90020BA1A /* KMSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8EF9BBDC1CFC91F90020BA1A /* KMSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF9BBD11CFC91F90020BA1A /* KMSegmentedControl.framework */; };
-		8EF9BBE11CFC91F90020BA1A /* KMSegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF9BBE01CFC91F90020BA1A /* KMSegmentedControlTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +24,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E5628CA1CFDBC8D00580BC5 /* KMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMSegmentedControl.swift; sourceTree = "<group>"; };
+		8EE16F941D007E9500B27496 /* UIColor+Darker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Darker.swift"; sourceTree = "<group>"; };
 		8EF9BBD11CFC91F90020BA1A /* KMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF9BBD41CFC91F90020BA1A /* KMSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMSegmentedControl.h; sourceTree = "<group>"; };
 		8EF9BBD61CFC91F90020BA1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EF9BBDB1CFC91F90020BA1A /* KMSegmentedControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMSegmentedControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EF9BBE01CFC91F90020BA1A /* KMSegmentedControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMSegmentedControlTests.swift; sourceTree = "<group>"; };
-		8EF9BBE21CFC91F90020BA1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				8EF9BBD31CFC91F90020BA1A /* KMSegmentedControl */,
-				8EF9BBDF1CFC91F90020BA1A /* KMSegmentedControlTests */,
 				8EF9BBD21CFC91F90020BA1A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,19 +71,20 @@
 		8EF9BBD31CFC91F90020BA1A /* KMSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				8EF9BBD41CFC91F90020BA1A /* KMSegmentedControl.h */,
-				8EF9BBD61CFC91F90020BA1A /* Info.plist */,
+				8EF9BBEB1CFC920F0020BA1A /* Sources */,
 			);
 			path = KMSegmentedControl;
 			sourceTree = "<group>";
 		};
-		8EF9BBDF1CFC91F90020BA1A /* KMSegmentedControlTests */ = {
+		8EF9BBEB1CFC920F0020BA1A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8EF9BBE01CFC91F90020BA1A /* KMSegmentedControlTests.swift */,
-				8EF9BBE21CFC91F90020BA1A /* Info.plist */,
+				8EF9BBD41CFC91F90020BA1A /* KMSegmentedControl.h */,
+				8EF9BBD61CFC91F90020BA1A /* Info.plist */,
+				8E5628CA1CFDBC8D00580BC5 /* KMSegmentedControl.swift */,
+				8EE16F941D007E9500B27496 /* UIColor+Darker.swift */,
 			);
-			path = KMSegmentedControlTests;
+			name = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE16F951D007E9500B27496 /* UIColor+Darker.swift in Sources */,
+				8E5628CB1CFDBC8D00580BC5 /* KMSegmentedControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EF9BBE11CFC91F90020BA1A /* KMSegmentedControlTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,28 +314,33 @@
 		8EF9BBE61CFC91F90020BA1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KMSegmentedControl/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KamilMazurek.KMSegmentedControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8EF9BBE71CFC91F90020BA1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KMSegmentedControl/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KamilMazurek.KMSegmentedControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -380,6 +387,7 @@
 				8EF9BBE71CFC91F90020BA1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EF9BBE81CFC91F90020BA1A /* Build configuration list for PBXNativeTarget "KMSegmentedControlTests" */ = {
 			isa = XCConfigurationList;
@@ -388,6 +396,7 @@
 				8EF9BBEA1CFC91F90020BA1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
