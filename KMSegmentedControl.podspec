@@ -11,5 +11,4 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/YounZ/KMSegmentedControl.git", :tag => "#{s.version}"}
   s.framework = "UIKit"
   s.source_files = "KMSegmentedControl/**/*.{swift}"
-# s.resources = "KMSegmentedControl/**/*.{png,jpeg,jpg,storyboard,xib}"
 end
