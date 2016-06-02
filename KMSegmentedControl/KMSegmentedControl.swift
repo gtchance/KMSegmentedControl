@@ -14,11 +14,6 @@ public protocol KMSegmentedControlDelegate {
 
 @IBDesignable public class KMSegmentedControl: UIView {
 
-  enum SelectorOption {
-    case None
-    case BottomLine
-  }
-
   var delegate: KMSegmentedControlDelegate?
 
     // MARK : Private Variables
