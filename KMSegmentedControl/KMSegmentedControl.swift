@@ -150,16 +150,11 @@ public protocol KMSegmentedControlDelegate {
       seperatorLines.removeAll()
       for index in 0..<buttons.count {
         let xPos: CGFloat = buttons[index].frame.width * CGFloat(index)
-        var line: UIView? = nil
-        if index == buttons.count {
-          line = UIView(frame: CGRect(x: (buttons[index].frame.width) * CGFloat(index), y: 0, width: KMBorderWidth, height: self.frame.height))
-        } else {
-          line = UIView(frame: CGRect(x: (buttons[index].frame.width) * CGFloat(index), y: 0, width: KMBorderWidth, height: self.frame.height))
-        }
-        line!.center.x = xPos
-        line!.backgroundColor = KMBorderColor
-        seperatorLines.append(line!)
-        addSubview(line!)
+        let line = UIView(frame: CGRect(x: (buttons[index].frame.width) * CGFloat(index), y: 0, width: KMBorderWidth, height: self.frame.height))
+        line.center.x = xPos
+        line.backgroundColor = KMBorderColor
+        seperatorLines.append(line)
+        addSubview(line)
       }
     }
     print(seperatorLines.count)
