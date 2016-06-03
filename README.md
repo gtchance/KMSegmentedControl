@@ -21,19 +21,22 @@ upcoming...
 
 ### Swift
 
-Import library
+**Import library**
 
 ```swift 
 import KMSegmentedControl
 ```
 
-Create the KMSegmentedControl:
+**Create KMSegmentedControl programmatically:**
 
 ```swift
 var segmentedControl = KMSegmentedControl(frame: CGRect(x: 0,y: 0, width: 200, height: 50))
 ```
 
-You are also allowed to create it in your Storyboard
+**Create KMSegmentedControl with storyboard:**
+
+- Create a new UIView inheriting from KMSegmentedControl
+- Design it according to your own preferences.
 
 ## Options
 
