@@ -27,10 +27,10 @@ Import library
 import KMSegmentedControl
 ```
 
-Create KMSegmentedControl
+Create the KMSegmentedControl:
 
 ```swift
-var segmentedControl = UIView(frame: CGRect(x: 0,y: 0, width: 200, height: 50))
+var segmentedControl = KMSegmentedControl(frame: CGRect(x: 0,y: 0, width: 200, height: 50))
 ```
 
 You are also allowed to create it in your Storyboard
