@@ -4,7 +4,7 @@
 
 ## This library is still under development
 
-Note: This library might contain some small bugs but it will be fixed as soon as possible. However, it won't affect any of its funtionalities. It's planned
+Note: This library might contain some small bugs but it will be fixed as soon as possible. However, it won't affect any of its functionalities. It's planned
 to develop further functions that will make it more dynamic and cleaner.
 
 ### Screenshot
