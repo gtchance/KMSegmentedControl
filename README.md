@@ -4,7 +4,7 @@
 
 ## This library is still under development
 
-Note: This library might contain some small bugs but it will be fixed as soon as possible. However, it won't affect any of its functionalities. It's planned
+Note: This library might contain some small bugs but it will be fixed as soon as possible. However, it won't affect any of its funtionalities. It's planned
 to develop further functions that will make it more dynamic and cleaner.
 
 ### Screenshot
@@ -62,7 +62,7 @@ public var KMFontSize: CGFloat = 14 // font size of each item
 @IBInspectable public var KMUnSelectedTitleColor: UIColor?  // default title color
 @IBInspectable public var KMSelectorLineColor: UIColor? // color of the animated bottom line
 public var items: [String] = ["First", "Second"] // defines what items will be displayed
-public var KMShowSeperatorLines: Bool? // display seperator lines between each item
+public var KMShowSeperatorLines: Bool? // display seperator lines between each item (Will be shown as default)
 ```
 ## License
 
