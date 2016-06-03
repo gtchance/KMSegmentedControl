@@ -13,8 +13,8 @@ upcoming...
 
 ### Setup with CocoaPods
 
-- Add ```pod 'KMSegmentedControl' ```
-- Run ```pod install```
+- Add ```pod 'KMSegmentedControl' ``` to your Podfile
+- Run ```pod install``` in your Terminal
 - Run Project ```pod 'YourApp'.xcworkspace```
 
 ## Usage
