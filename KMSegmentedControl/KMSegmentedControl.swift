@@ -88,7 +88,7 @@ public protocol KMSegmentedControlDelegate {
     }
   }
 
-  public var items: [String] = ["Banana", "Apple"] {
+  public var items: [String] = ["First", "Second"] {
     didSet {
       setupKMSegmentedControl()
     }
