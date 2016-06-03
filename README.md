@@ -43,7 +43,8 @@ segmentedControl.delegate = self
 **Delegate Methods**
 
 ```swift
-func KMSegmentedControl(selected item: UIButton) // Let's you control each action. Use item.tag in order to get the item. 
+// called if an action happens. Control different behaviours by checking item.tag.
+func KMSegmentedControl(selected item: UIButton) 
 ```
 
 **Properties**
@@ -51,17 +52,17 @@ func KMSegmentedControl(selected item: UIButton) // Let's you control each actio
 Properties with @IBInspectable are customizable with storyboard but also in code.
 
 ```swift
-public var KMFontSize: CGFloat = 14 // Default font fize
-@IBInspectable public var KMSelectedItemColor: UIColor?  // Background of selected item
-@IBInspectable public var KMBorderWidth: CGFloat = 0  // Adjust the border width of the segmented control
-@IBInspectable public var KMBorderColor: UIColor? // Change the color of the border
-@IBInspectable public var KMBackgroundColor: UIColor? // Background color of this segmented control 
-@IBInspectable public var KMCornerRadius: CGFloat = 0 // Adjust the corner radius
-@IBInspectable public var KMSelectedTitleColor: UIColor? // Change the color of the selected item
-@IBInspectable public var KMUnSelectedTitleColor: UIColor?  // Default title color
-@IBInspectable public var KMSelectorLineColor: UIColor? // Color of the animated bottom line
-public var items: [String] = ["First", "Second"] // Defines what items will be displayed
-public var KMShowSeperatorLines: Bool? // Decide if you want to have seperator lines between each item
+public var KMFontSize: CGFloat = 14 // font size of each item
+@IBInspectable public var KMSelectedItemColor: UIColor?  // background of selected item
+@IBInspectable public var KMBorderWidth: CGFloat = 0  // border width of the segmented control
+@IBInspectable public var KMBorderColor: UIColor? // color of the border
+@IBInspectable public var KMBackgroundColor: UIColor? // background color of segmented control 
+@IBInspectable public var KMCornerRadius: CGFloat = 0 // corner radius of segmented control
+@IBInspectable public var KMSelectedTitleColor: UIColor? // color of the selected item
+@IBInspectable public var KMUnSelectedTitleColor: UIColor?  // default title color
+@IBInspectable public var KMSelectorLineColor: UIColor? // color of the animated bottom line
+public var items: [String] = ["First", "Second"] // defines what items will be displayed
+public var KMShowSeperatorLines: Bool? // display seperator lines between each item
 ```
 ## License
 
