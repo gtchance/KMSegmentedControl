@@ -9,7 +9,7 @@ to develop further functions that will make it more dynamic and cleaner.
 
 ### Screenshot
 
-upcoming...
+![WhatsAppExample](https://media.giphy.com/media/Pqayk9q4DsPK0/giphy.gif)
 
 ### Setup with CocoaPods
 
