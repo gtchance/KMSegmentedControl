@@ -7,7 +7,7 @@
 Note: This library might contain some small bugs but it will be fixed as soon as possible. However, it won't affect any of its funtionalities. It's planned
 to develop further functions that will make it more dynamic and cleaner.
 
-### Screenshot
+### Preview
 
 ![WhatsAppExample](https://media.giphy.com/media/Pqayk9q4DsPK0/giphy.gif)
 
