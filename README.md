@@ -9,6 +9,8 @@ to develop further functions that will make it more dynamic and cleaner.
 
 ### Preview
 
+WhatsApp-Style:
+
 ![WhatsAppExample](https://media.giphy.com/media/Pqayk9q4DsPK0/giphy.gif)
 
 ### Setup with CocoaPods
