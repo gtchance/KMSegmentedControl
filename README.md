@@ -7,11 +7,19 @@
 Note: This library might contain some small bugs but it will be fixed as soon as possible. However, it won't affect any of its funtionalities. It's planned
 to develop further functions that will make it more dynamic and cleaner.
 
+Planned features:
+
+- Animated + customizable ThumbnailView
+
 ### Preview
 
 WhatsApp-Style:
 
 ![WhatsAppExample](https://media.giphy.com/media/Pqayk9q4DsPK0/giphy.gif)
+
+Or you stick to the Apple-Style but you can also change the border width, seperator lines and many other properties: 
+
+![AppleExample](https://media.giphy.com/media/ZTlpQVI5xmx56/giphy.gif)
 
 ### Setup with CocoaPods
 
