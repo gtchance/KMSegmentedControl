@@ -13,7 +13,7 @@ Planned features:
 
 ### Preview
 
-WhatsApp-Style:
+WhatsApp-Style (Android):
 
 ![WhatsAppExample](https://media.giphy.com/media/Pqayk9q4DsPK0/giphy.gif)
 
