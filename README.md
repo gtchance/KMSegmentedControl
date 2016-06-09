@@ -22,7 +22,7 @@ Or you stick to the Apple-Style but you can also change the border width, sepera
 
 ![AppleExample](https://media.giphy.com/media/ZTlpQVI5xmx56/giphy.gif)
 
-In order to use this SegmentedControl-Style properly, please make sure that the background of KMSelectedItemColor is transparent.
+In order to use this SegmentedControl-Style properly, please make sure that the background of KMSelectedItemColor and KMBackgroundColor is transparent (clearColor).
 
 ![HighlightedView] (https://media.giphy.com/media/ikZbmtPHBqwcU/giphy.gif)
 
