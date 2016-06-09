@@ -10,6 +10,7 @@ to develop further functions that will make it more dynamic and cleaner.
 Planned features:
 
 - Animated + customizable ThumbnailView
+- Images
 
 ### Preview
 
@@ -20,6 +21,10 @@ WhatsApp-Style (Android):
 Or you stick to the Apple-Style but you can also change the border width, seperator lines and many other properties: 
 
 ![AppleExample](https://media.giphy.com/media/ZTlpQVI5xmx56/giphy.gif)
+
+In order to use this SegmentedControl-Style properly, please make sure that the background (KMBackgroundColor + KMSelectedItemColor) is transparent. If you'd like to change the background color anyway, add this View as a subview of another one.
+
+![HighlightedView] (https://media.giphy.com/media/ikZbmtPHBqwcU/giphy.gif)
 
 ### Setup with CocoaPods
 
@@ -62,7 +67,12 @@ func KMSegmentedControl(selected item: UIButton)
 Properties with @IBInspectable are customizable with storyboard but also in code.
 
 ```swift
-public var KMFontSize: CGFloat = 14 // font size of each item
+// Defines which UIElement will be visible
+public enum UIElement {
+    case HighlightedView
+    case SelectorLine
+}
+
 @IBInspectable public var KMSelectedItemColor: UIColor?  // background of selected item
 @IBInspectable public var KMBorderWidth: CGFloat = 0  // border width of the segmented control
 @IBInspectable public var KMBorderColor: UIColor? // color of the border
@@ -70,9 +80,13 @@ public var KMFontSize: CGFloat = 14 // font size of each item
 @IBInspectable public var KMCornerRadius: CGFloat = 0 // corner radius of segmented control
 @IBInspectable public var KMSelectedTitleColor: UIColor? // color of the selected item
 @IBInspectable public var KMUnSelectedTitleColor: UIColor?  // default title color
-@IBInspectable public var KMSelectorLineColor: UIColor? // color of the animated bottom line
+@IBInspectable public var KMSelectorLineColor: UIColor? // color of the animated bottom line if defined
+@IBInspectable public var KMHighlightedViewColor: UIColor? // color of the highlighted view if defined
+public var KMFontSize: CGFloat = 14 // font size of each item
 public var items: [String] = ["First", "Second"] // defines what items will be displayed
 public var KMShowSeperatorLines: Bool? // display seperator lines between each item (Will be shown as default)
+public var KMShowHighlightedView: Bool? // display highlighted view (Will be shown as default)
+public var UIElements: [UIElement] = [.HighlightedView, .SelectorLine] // Define which UIElement should be displayed (Both will be as default)
 ```
 ## License
 
