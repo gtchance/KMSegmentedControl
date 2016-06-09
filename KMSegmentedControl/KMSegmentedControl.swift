@@ -14,9 +14,14 @@ public protocol KMSegmentedControlDelegate {
 
 @IBDesignable public class KMSegmentedControl: UIView {
 
+  public enum UIElement {
+    case HighlightedView
+    case SelectorLine
+  }
+
   var delegate: KMSegmentedControlDelegate?
 
-    // MARK : Private Variables
+  // MARK : Private Variables
 
   private var buttons = [UIButton]()
 
@@ -27,11 +32,15 @@ public protocol KMSegmentedControlDelegate {
 
   private var seperatorLines = [UIView]()
 
+  private var highlightedView = UIView()
   private var selectorLine = UIView()
 
   private var showSeperatorLines: Bool = true
+  private var showHighlightedView: Bool = true
 
-    // MARK : Customization Properties
+  private var label = UILabel()
+
+  // MARK : Customization Properties
 
   public var KMFontSize: CGFloat = 14 {
     didSet {
@@ -88,7 +97,13 @@ public protocol KMSegmentedControlDelegate {
     }
   }
 
-  public var items: [String] = ["First", "Second"] {
+  @IBInspectable public var KMHighlightedViewColor: UIColor? {
+    didSet {
+      highlightedView.backgroundColor = KMHighlightedViewColor
+    }
+  }
+
+  public var items: [String] = ["Banana", "Apple"] {
     didSet {
       setupKMSegmentedControl()
     }
@@ -101,7 +116,19 @@ public protocol KMSegmentedControlDelegate {
     }
   }
 
-    // MARK : Initialitation
+  public var KMShowHighlightedView: Bool? {
+    didSet {
+      showHighlightedView = KMShowHighlightedView!
+    }
+  }
+
+  public var UIElements: [UIElement] = [.HighlightedView, .SelectorLine] {
+    didSet {
+      setupKMSegmentedControl()
+    }
+  }
+
+  // MARK : Initialitation
 
   override public init(frame: CGRect) {
     super.init(frame: frame)
@@ -112,7 +139,7 @@ public protocol KMSegmentedControlDelegate {
     super.init(coder: aDecoder)
     setupKMSegmentedControl()
   }
-    // MARK : Setup
+  // MARK : Setup
   override public func prepareForInterfaceBuilder() {
     items = ["First", "Second", "Third"]
     layoutIfNeeded()
@@ -121,17 +148,29 @@ public protocol KMSegmentedControlDelegate {
   override public func layoutSubviews() {
     super.layoutSubviews()
     var selectFrame = selectedItem!.frame
-    let newWidth = CGRectGetWidth(selectFrame) + 0.5
-    selectFrame.size.width = newWidth
-    selectFrame.size.height = 4.0
-    selectFrame.origin.y = (selectedItem?.frame.height)! - 4
-    selectorLine.frame = selectFrame
-    selectorLine.backgroundColor = KMSelectorLineColor
-    addSubview(selectorLine)
+    if UIElements.contains(.SelectorLine) {
+      let newWidth = CGRectGetWidth(selectFrame) + 0.5
+      selectFrame.size.width = newWidth
+      selectFrame.size.height = 4.0
+      selectFrame.origin.y = (selectedItem?.frame.height)! - 4
+      selectorLine.frame = selectFrame
+      selectorLine.backgroundColor = KMSelectorLineColor
+      addSubview(selectorLine)
+    }
+
+    if UIElements.contains(.HighlightedView) {
+      highlightedView.frame = CGRect(x: 0, y: 0, width: selectedItem!.frame.width - 4.0, height: selectedItem!.frame.height - 4.0)
+      highlightedView.center = selectedItem!.center
+      highlightedView.backgroundColor = KMHighlightedViewColor
+      highlightedView.layer.cornerRadius = KMCornerRadius
+      insertSubview(highlightedView, atIndex: 0)
+    }
+
+
     if showSeperatorLines {
       setupSeperatorLines()
     }
-    bringSubviewToFront(selectorLine)
+
   }
 
   private func setupSeperatorLines() {
@@ -193,7 +232,7 @@ public protocol KMSegmentedControlDelegate {
       if index == 0 {
         constraints.append(button.leadingAnchor.constraintEqualToAnchor(self.leadingAnchor))
       } else if index == buttons.count - 1 {
-          constraints.append(button.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor))
+        constraints.append(button.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor))
       }
       if prevButton != nil {
         constraints.append(button.leadingAnchor.constraintEqualToAnchor(prevButton?.trailingAnchor))
@@ -203,7 +242,7 @@ public protocol KMSegmentedControlDelegate {
     }
   }
 
-    // MARK : Action Handling
+  // MARK : Action Handling
 
   func didTapButton(button: UIButton) {
     selectedItem?.backgroundColor = self.backgroundColor
@@ -217,20 +256,30 @@ public protocol KMSegmentedControlDelegate {
       button.backgroundColor = self.backgroundColor?.darkerColor()
     }
 
-    UIView.animateWithDuration(0.2, delay: 0, options: [.CurveEaseOut], animations: {
-      self.selectorLine.frame = CGRect(x: CGFloat(button.frame.width) * CGFloat(button.tag) , y: button.frame.height - 4.0, width: CGFloat(button.frame.width), height:4.0)
-    }, completion: nil)
+    if UIElements.contains(.SelectorLine) {
+      UIView.animateWithDuration(0.2, delay: 0, options: [.CurveEaseOut], animations: {
+        self.selectorLine.frame = CGRect(x: CGFloat(button.frame.width) * CGFloat(button.tag) , y: button.frame.height - 4.0, width: CGFloat(button.frame.width), height:4.0)
+        }, completion: nil)
+    }
+
+    if UIElements.contains(.HighlightedView) {
+      UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: . CurveEaseOut, animations: {
+        self.highlightedView.frame = CGRect(x: 0, y: 0, width: button.frame.width - 4.0, height: button.frame.height - 4.0)
+        self.highlightedView.center = button.center
+        }, completion: nil)
+    }
+
     button.enabled = false
     button.setTitleColor(KMSelectedTitleColor, forState: .Normal)
     delegate?.KMSegmentedControl(selected: button)
   }
-    
+
   // MARK : Helper Methods
-    
+
   func setFont(size: CGFloat) {
     for item in buttons {
       item.titleLabel?.font = UIFont.systemFontOfSize(size)
+      
     }
   }
 }
-
