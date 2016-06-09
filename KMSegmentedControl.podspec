@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.name = "KMSegmentedControl"
   s.summary = "KMSegmentedControl let's you customize your UISegmentedControl as you prefer."
   s.requires_arc = true
-  s.version = "1.0.2"
+  s.version = "1.0.3"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "Kamil Mazurek" => "kamilm@outlook.de" }
   s.homepage = "https://github.com/YounZ/KMSegmentedControl"
