@@ -9,7 +9,6 @@ to develop further functions that will make it more dynamic and cleaner.
 
 Planned features:
 
-- Animated + customizable ThumbnailView
 - Images
 
 ### Preview
