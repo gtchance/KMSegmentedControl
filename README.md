@@ -9,9 +9,6 @@ to develop further functions that will make it more dynamic and cleaner.
 
 Planned features:
 
-- Animated + customizable ThumbnailView
-- Images
-
 ### Preview
 
 WhatsApp-Style (Android):
@@ -22,7 +19,7 @@ Or you stick to the Apple-Style but you can also change the border width, sepera
 
 ![AppleExample](https://media.giphy.com/media/ZTlpQVI5xmx56/giphy.gif)
 
-In order to use this SegmentedControl-Style properly, please make sure that the background (KMBackgroundColor + KMSelectedItemColor) is transparent. If you'd like to change the background color anyway, add this View as a subview of another one.
+In order to use this SegmentedControl-Style properly, make sure the background of KMSelectedItemColor and KMBackgroundColor is transparent (clearColor).
 
 ![HighlightedView] (https://media.giphy.com/media/ikZbmtPHBqwcU/giphy.gif)
 
