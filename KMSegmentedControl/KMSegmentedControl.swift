@@ -109,6 +109,18 @@ public protocol KMSegmentedControlDelegate {
     }
   }
 
+	public var images: [String] = [] {
+		didSet {
+			setupKMSegmentedControl()
+		}
+	}
+
+	public var placeImageAboveTitle: Bool = false {
+		didSet {
+			setupKMSegmentedControl()
+		}
+	}
+
   public var KMShowSeperatorLines: Bool? {
     didSet {
       showSeperatorLines = KMShowSeperatorLines!
@@ -139,7 +151,9 @@ public protocol KMSegmentedControlDelegate {
     super.init(coder: aDecoder)
     setupKMSegmentedControl()
   }
+
   // MARK : Setup
+
   override public func prepareForInterfaceBuilder() {
     items = ["First", "Second", "Third"]
     layoutIfNeeded()
@@ -166,11 +180,9 @@ public protocol KMSegmentedControlDelegate {
       insertSubview(highlightedView, atIndex: 0)
     }
 
-
     if showSeperatorLines {
       setupSeperatorLines()
     }
-
   }
 
   private func setupSeperatorLines() {
@@ -202,13 +214,19 @@ public protocol KMSegmentedControlDelegate {
     buttons.removeAll(keepCapacity: true)
 
     for i in 0...items.count - 1  {
-      let button = UIButton()
+      var button = UIButton()
       button.tag = i
       button.translatesAutoresizingMaskIntoConstraints = false
       button.setTitle(items[i], forState: .Normal)
       button.titleLabel?.font = UIFont.systemFontOfSize(14.0)
       button.addTarget(self, action: #selector(didTapButton(_:)), forControlEvents: .TouchDown)
       button.setTitleColor(i == 0 ? KMSelectedTitleColor : KMUnSelectedTitleColor, forState: .Normal)
+			if !images.isEmpty {
+				setImage(images[i], button: &button)
+				if placeImageAboveTitle {
+					setupButton(&button)
+				}
+			}
       buttons.append(button)
       addSubview(button)
     }
@@ -271,6 +289,10 @@ public protocol KMSegmentedControlDelegate {
 
     button.enabled = false
     button.setTitleColor(KMSelectedTitleColor, forState: .Normal)
+		if !images.isEmpty {
+			selectedItem!.setImage(UIImage(named: images[button.tag]), forState: .Highlighted)
+			selectedItem!.setImage(UIImage(named: images[button.tag]), forState: .Disabled)
+		}
     delegate?.KMSegmentedControl(selected: button)
   }
 
@@ -279,7 +301,21 @@ public protocol KMSegmentedControlDelegate {
   func setFont(size: CGFloat) {
     for item in buttons {
       item.titleLabel?.font = UIFont.systemFontOfSize(size)
-      
     }
   }
+
+	private func setImage(named: String, inout button: UIButton) {
+		let image = UIImage(named: named)
+		image?.imageWithRenderingMode(.AlwaysOriginal)
+		button.setImage(image, forState: .Normal)
+	}
+
+	private func setupButton(inout button: UIButton) {
+		let spacing: CGFloat = 6.0
+		let imageSize: CGSize = button.imageView!.image!.size
+		button.titleEdgeInsets = UIEdgeInsetsMake(0.0, -imageSize.width, -(imageSize.height + spacing), 0.0)
+		let labelString = NSString(string: button.titleLabel!.text!)
+		let titleSize = labelString.sizeWithAttributes([NSFontAttributeName: button.titleLabel!.font])
+		button.imageEdgeInsets = UIEdgeInsetsMake(-(titleSize.height + spacing), 0.0, 0.0, -titleSize.width)
+	}
 }
