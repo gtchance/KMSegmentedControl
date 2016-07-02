@@ -19,7 +19,7 @@ public protocol KMSegmentedControlDelegate: class {
     case SelectorLine
   }
 
-  var delegate: KMSegmentedControlDelegate?
+  weak var delegate: KMSegmentedControlDelegate?
 
   // MARK : Private Variables
 
