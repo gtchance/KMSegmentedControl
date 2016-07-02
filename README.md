@@ -84,6 +84,8 @@ public var items: [String] = ["First", "Second"] // defines what items will be d
 public var KMShowSeperatorLines: Bool? // display seperator lines between each item (Will be shown as default)
 public var KMShowHighlightedView: Bool? // display highlighted view (Will be shown as default)
 public var UIElements: [UIElement] = [.HighlightedView, .SelectorLine] // Define which UIElement should be displayed (Both will be as default)
+public var images: [String] = [] // Add Images for each button
+public var placeImageAboveTitle: Bool = false // Set 'true' if you want an image to be centered above the title/label
 ```
 ## License
 
