@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol KMSegmentedControlDelegate: class {
-  func KMSegmentedControl(selected item: UIButton)
+  func KMSegmentedControlItemSelected(item: UIButton)
 }
 
 @IBDesignable public class KMSegmentedControl: UIView {
@@ -293,7 +293,7 @@ public protocol KMSegmentedControlDelegate: class {
 			selectedItem!.setImage(UIImage(named: images[button.tag]), forState: .Highlighted)
 			selectedItem!.setImage(UIImage(named: images[button.tag]), forState: .Disabled)
 		}
-    delegate?.KMSegmentedControl(selected: button)
+    delegate?.KMSegmentedControlItemSelected(button)
   }
 
   // MARK : Helper Methods
