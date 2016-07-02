@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol KMSegmentedControlDelegate {
+public protocol KMSegmentedControlDelegate: class {
   func KMSegmentedControl(selected item: UIButton)
 }
 
