@@ -252,8 +252,8 @@ public protocol KMSegmentedControlDelegate: class {
       } else if index == buttons.count - 1 {
         constraints.append(button.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor))
       }
-      if prevButton != nil {
-        constraints.append(button.leadingAnchor.constraintEqualToAnchor(prevButton?.trailingAnchor))
+      if let prevButtonTrailing = prevButton?.trailingAnchor {
+            constraints.append(button.leadingAnchor.constraintEqualToAnchor(prevButtonTrailing))
       }
       NSLayoutConstraint.activateConstraints(constraints)
       prevButton = button
