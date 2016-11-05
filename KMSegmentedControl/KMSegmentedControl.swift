@@ -264,11 +264,11 @@ public protocol KMSegmentedControlDelegate: class {
             prevButton = button
         }
     }
-    func selectItemAtIndex(index: Int) {
+    public func selectItemAtIndex(index: Int) {
         selectItem(buttons[index])
     }
     
-    func selectItem(item: UIButton) {
+    private func selectItem(item: UIButton) {
         selectedItem?.backgroundColor = self.backgroundColor
         selectedItem?.enabled = true
         selectedItem?.setTitleColor(KMUnSelectedTitleColor, forState: .Normal)
