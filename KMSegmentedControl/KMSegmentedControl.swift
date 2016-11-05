@@ -227,9 +227,9 @@ public protocol KMSegmentedControlDelegate: class {
             button.addTarget(self, action: #selector(didTapButton(_:)), forControlEvents: .TouchDown)
             button.setTitleColor(i == 0 ? KMSelectedTitleColor : KMUnSelectedTitleColor, forState: .Normal)
             if !images.isEmpty {
-                setImage(images[i], button: button)
+                setImage(images[i], button: &button)
                 if placeImageAboveTitle {
-                    setupButton(button)
+                    setupButton(&button)
                 }
             }
             buttons.append(button)
@@ -347,7 +347,7 @@ public protocol KMSegmentedControlDelegate: class {
         }
     }
     
-    private func setImage(named: String, inout button: inoutUIButton) {
+    private func setImage(named: String, inout button: UIButton) {
         let image = UIImage(named: named)
         image?.imageWithRenderingMode(.AlwaysOriginal)
         button.setImage(image, forState: .Normal)
