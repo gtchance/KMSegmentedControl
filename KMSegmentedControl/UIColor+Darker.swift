@@ -12,13 +12,13 @@ extension UIColor {
 
   func darkerColor() -> UIColor {
     let amount: CGFloat = 0.8
-    let rgba = UnsafeMutablePointer<CGFloat>.alloc(4)
+    let rgba = UnsafeMutablePointer<CGFloat>.allocate(capacity: 4)
 
     self.getRed(&rgba[0], green: &rgba[1], blue: &rgba[2], alpha: &rgba[3])
     let darkerColor = UIColor(red: amount*rgba[0], green: amount*rgba[1], blue: amount*rgba[2], alpha: rgba[3])
 
-    rgba.destroy()
-    rgba.dealloc(4)
+    rgba.deinitialize()
+    rgba.deallocate(capacity: 4)
     return darkerColor
   }
 }
